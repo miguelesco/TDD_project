@@ -1,3 +1,5 @@
+require_relative '../solver'
+
 describe Solver do 
   solver = Solver.new
   context 'Test factorial method' do
@@ -21,8 +23,8 @@ describe Solver do
       expect(solver.factorial(0)).to eq 1
     end
 
-    if 'Raise an exeption if the arguent is a negative number' do
-      expect(solver.factorial(-2)).to raise_exception
+    it 'Raise an exeption if the arguent is a negative number' do
+      expect {solver.factorial(-2)}.to raise_error(RuntimeError)
     end
   end
 end
