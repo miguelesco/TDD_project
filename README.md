@@ -19,11 +19,13 @@ To get a local copy up and running follow these simple example steps.
 - Go to the directory where you want this project to be cloned into
 
 - Run this command:
-  `git clone https://github.com/jmontanholi/TDD_project.git`
+  `git clone https://github.com/miguelesco/TDD_project.git`
 
 - cd into the directory
 
-- run the main.rb file (if you are on windows you just need to run `main` in other systems you need to run `ruby main.rb`)
+## Testing
+
+- To test just use the command `rspec` inside the directory
 ## Authors
 
 👤 **João Vítor Montanholi Nunes**
