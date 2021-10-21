@@ -24,7 +24,7 @@ describe Solver do
     end
 
     it 'Raise an exeption if the arguent is a negative number' do
-      expect {solver.factorial(-2)}.to raise_error(RuntimeError)
+      expect {solver.factorial(-2)}.to raise_error(ArgumentError)
     end
   end
 
@@ -38,7 +38,7 @@ describe Solver do
     end
 
     it 'Should return an error if there no string' do
-      expect {solver.reverse_string('')}.to raise_error(RuntimeError)
+      expect {solver.reverse_string('')}.to raise_error(ArgumentError)
     end
 
     it 'Should return oãoj when send joão' do
@@ -46,7 +46,7 @@ describe Solver do
     end
 
     it 'Should return an error if i send a number' do 
-      expect {solver.reverse_string(2)}.to raise_error(RuntimeError)
+      expect {solver.reverse_string(2)}.to raise_error(ArgumentError)
     end
   end
 end
