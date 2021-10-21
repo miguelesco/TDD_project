@@ -1,6 +1,6 @@
 require_relative '../solver'
 
-describe Solver do 
+describe Solver do
   solver = Solver.new
   context 'Test factorial method' do
     it 'Returns 24 if the argument is 4' do
@@ -12,11 +12,11 @@ describe Solver do
     end
 
     it 'Return 40,320 if the argument is 8' do
-      expect(solver.factorial(8)).to eq 40320
+      expect(solver.factorial(8)).to eq 40_320
     end
 
     it 'Return 1,307,674,368,000 if the argument is 15' do
-      expect(solver.factorial(15)).to eq 1307674368000
+      expect(solver.factorial(15)).to eq 1_307_674_368_000
     end
 
     it 'Return 1 if the argument is 0' do
@@ -24,12 +24,12 @@ describe Solver do
     end
 
     it 'Raise an exeption if the arguent is a negative number' do
-      expect {solver.factorial(-2)}.to raise_error(ArgumentError)
+      expect { solver.factorial(-2) }.to raise_error(ArgumentError)
     end
   end
 
   context 'Test reverse string method' do
-    it 'Returns hello as olleh' do 
+    it 'Returns hello as olleh' do
       expect(solver.reverse_string('hello')).to eq 'olleh'
     end
 
@@ -38,15 +38,15 @@ describe Solver do
     end
 
     it 'Should return an error if there no string' do
-      expect {solver.reverse_string('')}.to raise_error(ArgumentError)
+      expect { solver.reverse_string('') }.to raise_error(ArgumentError)
     end
 
     it 'Should return oãoj when send joão' do
       expect(solver.reverse_string('joão')).to eq 'oãoj'
     end
 
-    it 'Should return an error if i send a number' do 
-      expect {solver.reverse_string(2)}.to raise_error(ArgumentError)
+    it 'Should return an error if i send a number' do
+      expect { solver.reverse_string(2) }.to raise_error(ArgumentError)
     end
   end
 
@@ -68,7 +68,7 @@ describe Solver do
     end
 
     it 'Raise an error if the argument is not a number' do
-      expect {solver.fizzbuzz('something')}.to raise_error(ArgumentError)
+      expect { solver.fizzbuzz('something') }.to raise_error(ArgumentError)
     end
   end
 end

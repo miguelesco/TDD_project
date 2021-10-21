@@ -1,21 +1,24 @@
 class Solver
-  def factorial(n)
-    return 1 if n == 0
-    raise ArgumentError.new "Negative numbers are not allowed" if n < 0
-    return n * factorial(n - 1)
+  def factorial(num)
+    return 1 if num.zero?
+    raise ArgumentError, 'Negative numbers are not allowed' if num.negative?
+
+    num * factorial(num - 1)
   end
 
   def reverse_string(str)
-    raise ArgumentError.new "A number is not allowed" if str.is_a?(Numeric)
-    raise ArgumentError.new "The string cannot be empty" if str.empty?
+    raise ArgumentError, 'A number is not allowed' if str.is_a?(Numeric)
+    raise ArgumentError, 'The string cannot be empty' if str.empty?
+
     str.reverse
   end
 
-  def fizzbuzz(n)
-    raise ArgumentError.new "The argument is not a number" unless n.is_a?(Numeric)
-    return 'fizzbuzz' if n % 3 == 0 && n % 5 == 0
-    return 'fizz' if n % 3 == 0
-    return 'buzz' if n % 5 == 0
-    "#{n}"
+  def fizzbuzz(num)
+    raise ArgumentError, 'The argument is not a number' unless num.is_a?(Numeric)
+    return 'fizzbuzz' if (num % 3).zero? && (num % 5).zero?
+    return 'fizz' if (num % 3).zero?
+    return 'buzz' if (num % 5).zero?
+
+    num.to_s
   end
 end
