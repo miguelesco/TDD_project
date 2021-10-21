@@ -10,4 +10,12 @@ class Solver
     raise ArgumentError.new "The string cannot be empty" if str.empty?
     str.reverse
   end
+
+  def fizzbuzz(n)
+    raise ArgumentError.new "The argument is not a number" unless n.is_a?(Numeric)
+    return 'fizzbuzz' if n % 3 == 0 && n % 5 == 0
+    return 'fizz' if n % 3 == 0
+    return 'buzz' if n % 5 == 0
+    "#{n}"
+  end
 end
