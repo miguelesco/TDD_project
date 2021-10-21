@@ -49,4 +49,26 @@ describe Solver do
       expect {solver.reverse_string(2)}.to raise_error(ArgumentError)
     end
   end
+
+  context 'Test FizzBuzz method' do
+    it 'Returns fizz if the number passed is divisible by three' do
+      expect(solver.fizzbuzz(3)).to eq 'fizz'
+    end
+
+    it 'Returns buzz if the number passed is divisible by five' do
+      expect(solver.fizzbuzz(5)).to eq 'buzz'
+    end
+
+    it 'Returns fizzbuzz if the number passed is divisible by both three and five' do
+      expect(solver.fizzbuzz(15)).to eq 'fizzbuzz'
+    end
+
+    it 'Returns the number passed if it is not divisible by three nor five' do
+      expect(solver.fizzbuzz(7)).to eq '7'
+    end
+
+    it 'Raise an error if the argument is not a number' do
+      expect {solver.fizzbuzz('something')}.to raise_error(ArgumentError)
+    end
+  end
 end
