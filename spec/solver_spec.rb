@@ -27,4 +27,26 @@ describe Solver do
       expect {solver.factorial(-2)}.to raise_error(RuntimeError)
     end
   end
+
+  context 'Test reverse string method' do
+    it 'Returns hello as olleh' do 
+      expect(solver.reverse_string('hello')).to eq 'olleh'
+    end
+
+    it 'Returns world as dlrow' do
+      expect(solver.reverse_string('world')).to eq 'dlrow'
+    end
+
+    it 'Should return an error if there no string' do
+      expect {solver.reverse_string('')}.to raise_error(RuntimeError)
+    end
+
+    it 'Should return oãoj when send joão' do
+      expect(solver.reverse_string('joão')).to eq 'oãoj'
+    end
+
+    it 'Should return an error if i send a number' do 
+      expect {solver.reverse_string(2)}.to raise_error(RuntimeError)
+    end
+  end
 end
